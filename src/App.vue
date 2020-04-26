@@ -90,3 +90,27 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus">
+*
+  box-sizing border-box
+#app
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  max-width 100vw
+  margin 4rem auto 0
+  color #2c3e50
+  font-family Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  @media(min-width: 768px)
+    max-width 1020px
+.button
+  min-height 2rem
+  border-radius .5rem
+  outline none
+.form-add
+  margin 1rem 0
+</style>

@@ -9,13 +9,13 @@
       <button
         type="submit"
         class="button calc-form__button"
-        :disabled="isButtonsDisabled"
+        :disabled="isSubmitDisabled"
       >
         Рассчитать
       </button>
       <button
         class="button calc-form__button"
-        :disabled="isButtonsDisabled"
+        :disabled="isClearDisabled"
         @click.prevent="clearForm"
       >
         Очистить
@@ -37,8 +37,11 @@ export default {
     };
   },
   computed: {
-    isButtonsDisabled() {
+    isSubmitDisabled() {
       return this.disabled || !(this.from && this.to);
+    },
+    isClearDisabled() {
+      return this.disabled || (!this.from && !this.to);
     },
   },
   methods: {
@@ -68,3 +71,32 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="stylus">
+.calc-form
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  width 100%
+  margin-bottom 1rem
+  @media(min-width: 768px)
+    flex-direction row
+  &__input
+    width 100%
+    margin-bottom .5rem
+    padding .5rem
+    border-radius .5rem
+    border 1px solid grey
+    outline none
+    @media(min-width: 768px)
+      margin-bottom 0
+      margin-right .5rem
+  &__buttons
+    display flex
+    justify-content space-between
+  &__button
+    margin-right .5rem
+    &:last-child
+      margin 0
+</style>

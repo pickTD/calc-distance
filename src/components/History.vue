@@ -31,3 +31,19 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="stylus">
+.history
+  &__container
+    width 100%
+    margin 0
+  &__list
+    margin 0
+    padding 0
+    list-style none
+  &__element
+    font-size .9rem
+    margin-bottom .5rem
+.error
+  color red
+</style>
